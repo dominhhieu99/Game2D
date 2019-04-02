@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\playcontrol.cs">
+    <Files>
+      <File FileName="Assets\Script\Player.cs" Line="123" Column="34" />
+      <File FileName="Assets\Script\cret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\cret_vertical.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Camera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\menu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\GroundCheck.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\playcontrol.cs" Line="77" Column="13" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
