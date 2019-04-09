@@ -115,7 +115,15 @@ public class Player : MonoBehaviour {
 		{
 			Flip();
 		}
+		if (ourHealth <= 0)
+		{
+			Death();
+		}
 
+	}
+	public void Death()
+	{
+		SceneManager.LoadScene ("GameOver");
 	}
 
 	public void Damage(int damage)
@@ -156,6 +164,10 @@ public class Player : MonoBehaviour {
 			SceneManager.LoadScene ("GameOver");
 			}
 
+		}
+		if (target.gameObject.tag == "x2") {
+			score = score *2;
+			textscore.text = "Score : " + score.ToString ();
 		}
 		if (target.gameObject.tag == "Home") {
 			SceneManager.LoadScene ("Lever2");
