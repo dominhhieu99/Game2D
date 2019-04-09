@@ -24,7 +24,6 @@ public class cret_vertical : MonoBehaviour
 		} else {
 			moveForceY = 4f;
 		}
-
 		rig.velocity = new Vector2 (0, transform.localScale.y) * moveForceY;
 	}
 

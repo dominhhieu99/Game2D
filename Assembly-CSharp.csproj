@@ -49,11 +49,14 @@
      <Compile Include="Assets\Script\Camera.cs" />
      <Compile Include="Assets\Script\GameOverButton.cs" />
      <Compile Include="Assets\Script\GroundCheck.cs" />
+     <Compile Include="Assets\Script\HeartUI.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\Script\Spikes.cs" />
      <Compile Include="Assets\Script\cret.cs" />
      <Compile Include="Assets\Script\cret_vertical.cs" />
      <Compile Include="Assets\Script\menu.cs" />
      <Compile Include="Assets\Script\playcontrol.cs" />
+     <Compile Include="Assets\Script\ufo1.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//hp
+using UnityEngine.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
@@ -15,11 +17,33 @@ public class Player : MonoBehaviour {
 	public Animator anim;
 	public ParticleSystem effect;
 
+	// cách 1
+	private List<GameObject> listObjs;
+	private GameObject[] arrayObjs;
+	int i=0;
+
+	// cách 2
+
+	public int ourHealth;
+	public int maxHealth = 5;
+
+
+
 	// Use this for initialization
 	void Start () {
 		r2 = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
+		ourHealth = maxHealth;
 		textscore = GameObject.Find ("textscore").GetComponent<Text> ();
+
+		listObjs = new List<GameObject> ();
+		arrayObjs = GameObject.FindGameObjectsWithTag ("blood");
+		foreach (GameObject obj in arrayObjs) {
+			listObjs.Add (obj);
+		}
+
+
+
 
 	}
 	// Update is called once per frame
@@ -91,6 +115,19 @@ public class Player : MonoBehaviour {
 		{
 			Flip();
 		}
+
+	}
+
+	public void Damage(int damage)
+	{
+		ourHealth -= damage;
+		gameObject.GetComponent<Animation>().Play("redflash");
+	}
+
+	public void Knockback (float Knockpow, Vector2 Knockdir)
+	{
+		r2.velocity = new Vector2(0, 0);
+		r2.AddForce(new Vector2(Knockdir.x * -100, Knockdir.y * Knockpow));
 	}
 
 	public void Flip()
@@ -104,7 +141,21 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D target)
 	{
 		if (target.gameObject.tag == "Cret") {
+			score = score - 1;
+			textscore.text = "Score : " + score.ToString ();
+			if(score<0){
+				SceneManager.LoadScene ("GameOver");
+			}
+			if (i < 2) {
+				Destroy (listObjs [i]);
+				listObjs.RemoveAt (i);
+				i++;
+			}
+				
+			if( i>=2){
 			SceneManager.LoadScene ("GameOver");
+			}
+
 		}
 		if (target.gameObject.tag == "Home") {
 			SceneManager.LoadScene ("Lever2");
@@ -115,14 +166,20 @@ public class Player : MonoBehaviour {
 		if (target.gameObject.tag == "nuoc") {
 			SceneManager.LoadScene ("GameOver");
 		}
-		if(target.gameObject.tag ==("Tien"))
-		{
-			anim.SetBool ("Hidecoin", true);
+
+	}
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (other.gameObject.CompareTag ("Tien")) {
+			Animator otheranim = other.gameObject.GetComponent<Animator> () as Animator;
+			otheranim.SetBool ("Eat", true);
 			score = score + 1;
 			textscore.text = "Score : " + score.ToString ();
-			Destroy (target.gameObject, 1);
+			Destroy (other.gameObject, 1);
 			Instantiate (effect, transform.position, transform.rotation);
+			Destroy (other);
 		}
+
 	}
 
 	public void BackCT ()

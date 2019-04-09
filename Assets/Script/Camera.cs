@@ -5,7 +5,7 @@ public class Camera : MonoBehaviour {
 	private Transform player;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player_7").transform;
+		player = GameObject.Find ("Player").transform;
 	}
 	
 	// Update is called once per frame

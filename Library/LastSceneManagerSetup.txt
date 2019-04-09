@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/lever2.unity
+- path: Assets/Scene/lever1.unity
   isLoaded: 1
   isActive: 1
