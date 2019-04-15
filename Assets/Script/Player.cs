@@ -154,15 +154,13 @@ public class Player : MonoBehaviour {
 			if(score<0){
 				SceneManager.LoadScene ("GameOver");
 			}
-			if (i < 2) {
+			if (i <3) {
 				Destroy (listObjs [i]);
 				listObjs.RemoveAt (i);
 				i++;
-			}
+			}else{SceneManager.LoadScene ("GameOver");}
 				
-			if( i>=2){
-			SceneManager.LoadScene ("GameOver");
-			}
+
 
 		}
 		if (target.gameObject.tag == "x2") {

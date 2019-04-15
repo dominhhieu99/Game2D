@@ -17,7 +17,7 @@ public class menu : MonoBehaviour {
 	}
 	public void startlever1()
 	{
-		SceneManager.LoadScene ("lever1");
+		SceneManager.LoadScene ("lever2");
 	}
 	public void exit()
 	{
