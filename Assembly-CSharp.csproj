@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\HeartUI.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Spikes.cs" />
+     <Compile Include="Assets\Script\camera1.cs" />
      <Compile Include="Assets\Script\cret.cs" />
      <Compile Include="Assets\Script\cret_vertical.cs" />
      <Compile Include="Assets\Script\menu.cs" />

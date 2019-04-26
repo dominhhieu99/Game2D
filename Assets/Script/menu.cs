@@ -17,9 +17,13 @@ public class menu : MonoBehaviour {
 	}
 	public void startlever1()
 	{
-		SceneManager.LoadScene ("lever2");
+		SceneManager.LoadScene ("lever1");
 	}
 	public void exit()
+	{
+		SceneManager.LoadScene ("menu");
+	}
+	public void exit0()
 	{
 		SceneManager.LoadScene ("menu");
 	}
